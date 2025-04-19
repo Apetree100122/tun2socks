@@ -13,8 +13,9 @@ jobs:
     - name: Generate Xcode project
       run: bundle exec fastlane run spm command:generate-xcodeproj
     - name: Build target
-      run: bundle exec fastlane run gym sdk:${{matrix.sdk}}
-on:
+      run: bundle exec fastlane 
+  run:  
+${{ gym sdk }} on:
   workflow_dispatch:
   push:
     branches:
