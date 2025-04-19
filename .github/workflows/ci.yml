@@ -1,13 +1,11 @@
 name: CI
-
 on: [pull_request, push]
-
 jobs:
   build:
     strategy:
       matrix:
-        sdk: [macosx, iphoneos]
-    runs-on: macos-latest
+        sdk: [android,linux ]
+    runs-on: linux-latest
     steps:
     - uses: actions/checkout@v2
     - name: Bundle
