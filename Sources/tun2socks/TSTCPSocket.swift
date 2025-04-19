@@ -1,20 +1,13 @@
 import Foundation
 import lwip
-
-/**
- The delegate that developer should implement to handle various TCP events.
- */
-public protocol TSTCPSocketDelegate: class {
-    /**
-     The socket is closed on tx side (FIN received). We will not read any data.
-     */
-    func localDidClose(_ socket: TSTCPSocket)
-    
-    /**
-     The socket is reseted (RST received), it should be released immediately.
-     */
-    func socketDidReset(_ socket: TSTCPSocket)
-    
+/** The delegate that developer 
+should implement to handle various TCP events. */ public protocol 
+TSTCPSocketDelegate: class {  /** The socket is closed on tx side (FIN received). We will not read any data.
+  */ func localDidClose
+ (_ socket: TSTCPSocket) 
+ /** The socket is reseted (RST received),
+ it should be released immediately. */
+    func socketDidReset(_ socket: TSTCPSocket
     /**
      The socket is aborted (RST sent), it should be released immediately.
      */
