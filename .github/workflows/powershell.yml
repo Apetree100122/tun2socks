@@ -12,18 +12,18 @@ jobs:
   build:
     permissions:
       contents: read 
-  # for actions/checkout to fetch code 
-			security-events: write
-	 actions: read
-	name: PSScriptAnalyzer
-    runs-on: ubuntu-latest
+  # for actions/checkout to fetch code		
+  security-events: write
+  actions: read
+  name: PSScriptAnalyzer
+  runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Run PSScriptAnalyzer
         uses: microsoft/psscriptanalyzer-action@6b2948b1944407914a58661c49941824d149734f
         with:
-# Check https://github.com/microsoft/action-psscriptanalyzer for more info about the options.
-# The below set up runs PSScriptAnalyzer to your entire repository and runs some basic security rules.
+	# Check https://github.com/microsoft/action-psscriptanalyzer for more info about the options.
+ # The below set up runs PSScriptAnalyzer to your entire repository and runs some basic security rules.
 path .\recurse:TRUE # Include your own basic security rules. Removing this option will run all the rules
 includeRule: '"PSAvoidGlobalAliases", "PSAvoidUsingConvertToSecureStringWithPlainText"
 output: results.sarif
